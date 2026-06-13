@@ -1,0 +1,105 @@
+/* ==============================
+   Root Variables (Light/Dark Mode)
+   ============================== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --primary-color: #0055aa;
+  --accent-color: #ff9900;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --primary-color: #3399ff;
+  --accent-color: #ffcc00;
+}
+
+/* ==============================
+   Global Styles
+   ============================== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+header, nav, main, footer {
+  padding: 1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #003366;
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid var(--accent-color);
+}
+
+/* ==============================
+   Navigation (Flexbox)
+   ============================== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+/* ==============================
+   Layout (CSS Grid)
+   ============================== */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* ==============================
+   Responsive Media Queries
+   ============================== */
+@media (min-width: 601px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1025px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--primary-color);
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
